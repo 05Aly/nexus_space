@@ -13,19 +13,19 @@
             {% csrf_token %}
             <div>
                 <label class="block text-xs font-semibold text-primarytext mb-1">اسم المستخدم</label>
-                <input type="text" name="username" required class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm outline-none focus:border-petrol">
+                <input type="text" name="username" required class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm outline-none focus:border-brown">
             </div>
             {% if mode == 'register' %}
             <div>
                 <label class="block text-xs font-semibold text-primarytext mb-1">البريد الإلكتروني</label>
-                <input type="email" name="email" required class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm outline-none focus:border-petrol">
+                <input type="email" name="email" required class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm outline-none focus:border-brown">
             </div>
             {% endif %}
             <div>
                 <label class="block text-xs font-semibold text-primarytext mb-1">كلمة المرور</label>
-                <input type="password" name="password" required class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm outline-none focus:border-petrol">
+                <input type="password" name="password" required class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm outline-none focus:border-brown">
             </div>
-            <button type="submit" class="w-full bg-primarytext hover:bg-petrolhover text-white font-semibold text-sm py-2.5 rounded-[6px] transition duration-150">
+            <button type="submit" class="w-full bg-primarytext hover:bg-brownhover text-white font-semibold text-sm py-2.5 rounded-[6px] transition duration-150">
                 {% if mode == 'register' %}إنشاء الحساب{% else %}دخول{% endif %}
             </button>
         </form>
@@ -33,8 +33,8 @@
         <div class="mt-6 pt-5 border-t border-borderline text-xs text-secondarytext space-y-2">
             <div class="font-semibold text-primarytext mb-2">أو استخدم الدخول التجريبي السريع:</div>
             <div class="flex gap-2">
-                <a href="{% url 'demo_login' 'client' %}" class="flex-1 text-center bg-iconbg hover:bg-petrol hover:text-white text-primarytext py-2 rounded-[6px] font-medium transition duration-150">دخول كعميل</a>
-                <a href="{% url 'demo_login' 'admin' %}" class="flex-1 text-center bg-pagebg border border-borderline hover:border-petrol text-primarytext py-2 rounded-[6px] font-medium transition duration-150">دخول كمدير نظام</a>
+                <a href="{% url 'demo_login' 'client' %}" class="flex-1 text-center bg-iconbg hover:bg-brown hover:text-white text-primarytext py-2 rounded-[6px] font-medium transition duration-150">دخول كعميل</a>
+                <a href="{% url 'demo_login' 'admin' %}" class="flex-1 text-center bg-pagebg border border-borderline hover:border-brown text-primarytext py-2 rounded-[6px] font-medium transition duration-150">دخول كمدير نظام</a>
             </div>
         </div>
     </div>

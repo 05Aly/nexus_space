@@ -4,7 +4,7 @@
         <!-- Right side in RTL: Auth / Account Buttons -->
         <div class="flex items-center gap-2.5">
             {% if user.is_authenticated %}
-                <a href="{% url 'my_bookings' %}" class="bg-primarytext hover:bg-petrolhover text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-[6px] transition duration-150">
+                <a href="{% url 'my_bookings' %}" class="bg-primarytext hover:bg-brownhover text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-[6px] transition duration-150">
                     حجوزاتي ({{ user.username }})
                 </a>
                 {% if user.is_staff %}
@@ -16,7 +16,7 @@
                     خروج
                 </a>
             {% else %}
-                <a href="{% url 'register' %}" class="bg-primarytext hover:bg-petrolhover text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-[6px] transition duration-150">
+                <a href="{% url 'register' %}" class="bg-primarytext hover:bg-brownhover text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-[6px] transition duration-150">
                     تسجيل حساب
                 </a>
                 <a href="{% url 'login' %}" class="bg-cardbg hover:bg-iconbg text-primarytext border border-borderline text-xs sm:text-sm font-medium px-4 py-2 rounded-[6px] transition duration-150">
@@ -32,7 +32,7 @@
 
         <!-- Center Navigation Links (Desktop) -->
         <nav aria-label="التنقل الرئيسي" class="hidden lg:flex items-center gap-7 text-sm font-medium text-secondarytext">
-            <a href="{% url 'home' %}" class="text-primarytext font-semibold relative py-5 after:content-[''] after:absolute after:bottom-3 after:right-0 after:w-full after:h-[2px] after:bg-petrol">
+            <a href="{% url 'home' %}" class="text-primarytext font-semibold relative py-5 after:content-[''] after:absolute after:bottom-3 after:right-0 after:w-full after:h-[2px] after:bg-brown">
                 الرئيسية
             </a>
             <a href="{% url 'home' %}#spaces-section" class="hover:text-primarytext transition duration-150">الوحدات</a>
@@ -44,22 +44,22 @@
 
         <!-- Left side in RTL: English Brand Name -->
         <a href="{% url 'home' %}" dir="ltr" class="brand-en text-xl sm:text-2xl font-bold tracking-tight shrink-0">
-            <span class="text-primarytext">Nexus</span><span class="text-petrol">Space</span>
+            <span class="text-primarytext">Nexus</span><span class="text-brown">Space</span>
         </a>
 
     </div>
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-nav-menu" class="hidden lg:hidden bg-cardbg border-b border-borderline px-4 pt-3 pb-4 space-y-2 text-sm font-medium">
-        <a href="{% url 'home' %}" class="block py-2 text-petrol font-semibold border-b border-borderline/60">الرئيسية</a>
-        <a href="{% url 'home' %}#spaces-section" onclick="toggleMobileMenu()" class="block py-2 text-primarytext hover:text-petrol">الوحدات</a>
-        <a href="{% url 'home' %}#features-section" onclick="toggleMobileMenu()" class="block py-2 text-primarytext hover:text-petrol">الخدمات</a>
-        <a href="{% url 'home' %}#pricing-section" onclick="toggleMobileMenu()" class="block py-2 text-primarytext hover:text-petrol">الأسعار</a>
-        <a href="{% url 'home' %}#faq-section" onclick="toggleMobileMenu()" class="block py-2 text-primarytext hover:text-petrol">الأسئلة الشائعة</a>
-        <a href="#footer-contact" onclick="toggleMobileMenu()" class="block py-2 text-primarytext hover:text-petrol">تواصل معنا</a>
+        <a href="{% url 'home' %}" class="block py-2 text-brown font-semibold border-b border-borderline/60">الرئيسية</a>
+        <a href="{% url 'home' %}#spaces-section" onclick="toggleMobileMenu()" class="block py-2 text-primarytext hover:text-brown">الوحدات</a>
+        <a href="{% url 'home' %}#features-section" onclick="toggleMobileMenu()" class="block py-2 text-primarytext hover:text-brown">الخدمات</a>
+        <a href="{% url 'home' %}#pricing-section" onclick="toggleMobileMenu()" class="block py-2 text-primarytext hover:text-brown">الأسعار</a>
+        <a href="{% url 'home' %}#faq-section" onclick="toggleMobileMenu()" class="block py-2 text-primarytext hover:text-brown">الأسئلة الشائعة</a>
+        <a href="#footer-contact" onclick="toggleMobileMenu()" class="block py-2 text-primarytext hover:text-brown">تواصل معنا</a>
         <div class="pt-2 border-t border-borderline flex flex-wrap gap-2 text-xs">
             <a href="{% url 'demo_login' 'client' %}" class="bg-iconbg text-primarytext px-3 py-1.5 rounded-[6px]">دخول سريع (عميل)</a>
-            <a href="{% url 'demo_login' 'admin' %}" class="bg-iconbg text-petrol font-semibold px-3 py-1.5 rounded-[6px]">دخول سريع (لوحة الإدارة)</a>
+            <a href="{% url 'demo_login' 'admin' %}" class="bg-iconbg text-brown font-semibold px-3 py-1.5 rounded-[6px]">دخول سريع (لوحة الإدارة)</a>
         </div>
     </div>
 </header>

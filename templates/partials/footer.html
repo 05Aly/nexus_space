@@ -4,7 +4,7 @@
 
             <div class="space-y-2.5">
                 <a href="{% url 'home' %}" dir="ltr" class="brand-en text-xl font-bold tracking-tight inline-block">
-                    <span class="text-primarytext">Nexus</span><span class="text-petrol">Space</span>
+                    <span class="text-primarytext">Nexus</span><span class="text-brown">Space</span>
                 </a>
                 <p class="text-xs leading-relaxed text-secondarytext">
                     {{ site_config.hero_subtitle }}
@@ -14,10 +14,10 @@
             <div>
                 <h3 class="text-xs font-bold text-primarytext mb-3">روابط سريعة</h3>
                 <ul class="space-y-2 text-xs">
-                    <li><a href="{% url 'home' %}#spaces-section" class="hover:text-petrol">الوحدات المتاحة</a></li>
-                    <li><a href="{% url 'home' %}#features-section" class="hover:text-petrol">مزايا المنصة</a></li>
-                    <li><a href="{% url 'home' %}#how-it-works" class="hover:text-petrol">كيف يعمل النظام؟</a></li>
-                    <li><a href="{% url 'home' %}#faq-section" class="hover:text-petrol">الأسئلة الشائعة</a></li>
+                    <li><a href="{% url 'home' %}#spaces-section" class="hover:text-brown">الوحدات المتاحة</a></li>
+                    <li><a href="{% url 'home' %}#features-section" class="hover:text-brown">مزايا المنصة</a></li>
+                    <li><a href="{% url 'home' %}#how-it-works" class="hover:text-brown">كيف يعمل النظام؟</a></li>
+                    <li><a href="{% url 'home' %}#faq-section" class="hover:text-brown">الأسئلة الشائعة</a></li>
                 </ul>
             </div>
 
@@ -25,15 +25,15 @@
                 <h3 class="text-xs font-bold text-primarytext mb-3">تواصل معنا</h3>
                 <ul class="space-y-2 text-xs">
                     <li class="flex items-center gap-2">
-                        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-petrol" aria-hidden="true"></i>
+                        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brown" aria-hidden="true"></i>
                         <span>{{ site_config.address }}</span>
                     </li>
                     <li class="flex items-center gap-2">
-                        <i data-lucide="phone" class="w-3.5 h-3.5 text-petrol" aria-hidden="true"></i>
+                        <i data-lucide="phone" class="w-3.5 h-3.5 text-brown" aria-hidden="true"></i>
                         <span dir="ltr">{{ site_config.phone_number }}</span>
                     </li>
                     <li class="flex items-center gap-2">
-                        <i data-lucide="mail" class="w-3.5 h-3.5 text-petrol" aria-hidden="true"></i>
+                        <i data-lucide="mail" class="w-3.5 h-3.5 text-brown" aria-hidden="true"></i>
                         <span>{{ site_config.contact_email }}</span>
                     </li>
                 </ul>
@@ -42,14 +42,14 @@
             <div>
                 <h3 class="text-xs font-bold text-primarytext mb-3">إدارة النظام والمعاينة</h3>
                 <p class="text-xs mb-3 flex items-center gap-1.5">
-                    <i data-lucide="clock" class="w-3.5 h-3.5 text-petrol" aria-hidden="true"></i>
+                    <i data-lucide="clock" class="w-3.5 h-3.5 text-brown" aria-hidden="true"></i>
                     <span>{{ site_config.working_hours }}</span>
                 </p>
                 <div class="flex flex-wrap gap-2">
-                    <a href="{% url 'demo_login' 'client' %}" class="text-xs bg-iconbg hover:bg-petrol hover:text-white text-primarytext px-3 py-1.5 rounded-[6px] font-medium transition duration-150">
+                    <a href="{% url 'demo_login' 'client' %}" class="text-xs bg-iconbg hover:bg-brown hover:text-white text-primarytext px-3 py-1.5 rounded-[6px] font-medium transition duration-150">
                         دخول عميل تجريبي
                     </a>
-                    <a href="{% url 'demo_login' 'admin' %}" class="text-xs bg-primarytext hover:bg-petrolhover text-white px-3 py-1.5 rounded-[6px] font-medium transition duration-150">
+                    <a href="{% url 'demo_login' 'admin' %}" class="text-xs bg-primarytext hover:bg-brownhover text-white px-3 py-1.5 rounded-[6px] font-medium transition duration-150">
                         لوحة الإدارة (Admin)
                     </a>
                 </div>

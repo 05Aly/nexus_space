@@ -6,7 +6,7 @@
             <h1 class="text-xl font-bold text-primarytext">حجوزاتي</h1>
             <p class="text-xs text-secondarytext mt-0.5">متابعة وإدارة حجوزات الوحدات والقاعات</p>
         </div>
-        <a href="{% url 'home' %}#spaces-section" class="bg-primarytext hover:bg-petrolhover text-white text-xs font-semibold px-4 py-2.5 rounded-[6px] transition duration-150 inline-flex items-center gap-1.5">
+        <a href="{% url 'home' %}#spaces-section" class="bg-primarytext hover:bg-brownhover text-white text-xs font-semibold px-4 py-2.5 rounded-[6px] transition duration-150 inline-flex items-center gap-1.5">
             <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i>
             <span>حجز وحدة جديدة</span>
         </a>
@@ -32,10 +32,10 @@
                     <td class="p-4 font-semibold text-primarytext">{{ b.space.name }}</td>
                     <td class="p-4 text-secondarytext">{{ b.booking_date }}</td>
                     <td class="p-4 text-secondarytext">{{ b.start_hour }}:00 إلى {{ b.end_hour }}:00</td>
-                    <td class="p-4 font-bold text-petrol">{{ b.total_price }} جنيه</td>
+                    <td class="p-4 font-bold text-brown">{{ b.total_price }} جنيه</td>
                     <td class="p-4">
                         {% if b.status == 'CONFIRMED' %}
-                            <span class="bg-iconbg text-petrol px-2.5 py-1 rounded-[5px] text-xs font-semibold">مؤكد</span>
+                            <span class="bg-iconbg text-brown px-2.5 py-1 rounded-[5px] text-xs font-semibold">مؤكد</span>
                         {% elif b.status == 'CANCELLED' %}
                             <span class="bg-gray-100 text-secondarytext px-2.5 py-1 rounded-[5px] text-xs font-semibold">ملغي</span>
                         {% else %}

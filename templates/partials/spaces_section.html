@@ -4,8 +4,8 @@
         <!-- Section Header -->
         <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
             <div class="text-right">
-                <div class="flex items-center gap-2 text-xs font-semibold text-petrol mb-1.5">
-                    <span class="w-5 h-[1.5px] bg-petrol inline-block"></span>
+                <div class="flex items-center gap-2 text-xs font-semibold text-brown mb-1.5">
+                    <span class="w-5 h-[1.5px] bg-brown inline-block"></span>
                     <span>تصفح وحداتنا</span>
                 </div>
                 <h2 class="text-2xl sm:text-[28px] font-bold text-primarytext">اختر المساحة المناسبة لاحتياجاتك</h2>
@@ -13,7 +13,7 @@
 
             <div class="flex items-center gap-3">
                 {% if selected_category %}
-                    <a href="{% url 'home' %}#spaces-section" class="text-xs font-medium text-petrol hover:underline">إلغاء التصفية</a>
+                    <a href="{% url 'home' %}#spaces-section" class="text-xs font-medium text-brown hover:underline">إلغاء التصفية</a>
                 {% endif %}
                 <a href="{% url 'home' %}#spaces-section" class="text-xs sm:text-sm font-medium text-secondarytext hover:text-primarytext inline-flex items-center gap-1 transition duration-150">
                     <span>عرض الكل</span>
@@ -41,7 +41,7 @@
         <!-- 3 Cards Grid -->
         <div id="pricing-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {% for space in spaces %}
-            <article class="bg-cardbg rounded-[8px] border border-borderline overflow-hidden flex flex-col hover:border-petrol/50 transition duration-150">
+            <article class="bg-cardbg rounded-[8px] border border-borderline overflow-hidden flex flex-col hover:border-brown/50 transition duration-150">
                 <!-- Card Top Image (Wide 16:7 aspect ratio) -->
                 <div class="relative aspect-[16/7] w-full bg-[#EAE9E4] overflow-hidden border-b border-borderline">
                     <img src="{{ space.image_url }}"
@@ -61,17 +61,17 @@
                         <!-- Unit Specs Row with SVG Icons -->
                         <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-secondarytext pb-4 border-b border-borderline">
                             <span class="inline-flex items-center gap-1">
-                                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-petrol" aria-hidden="true"></i>
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brown" aria-hidden="true"></i>
                                 <span>{{ space.floor_level }}</span>
                             </span>
                             <span class="text-borderline">|</span>
                             <span class="inline-flex items-center gap-1">
-                                <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-petrol" aria-hidden="true"></i>
+                                <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-brown" aria-hidden="true"></i>
                                 <span>{{ space.area_sqm }} م²</span>
                             </span>
                             <span class="text-borderline">|</span>
                             <span class="inline-flex items-center gap-1">
-                                <i data-lucide="users" class="w-3.5 h-3.5 text-petrol" aria-hidden="true"></i>
+                                <i data-lucide="users" class="w-3.5 h-3.5 text-brown" aria-hidden="true"></i>
                                 <span>{{ space.capacity }} أشخاص</span>
                             </span>
                         </div>
@@ -80,13 +80,13 @@
                     <!-- Card Footer: Price & Action Button -->
                     <div class="pt-4 flex items-center justify-between gap-2">
                         <a href="{% url 'space_detail' space.slug %}"
-                           class="bg-primarytext hover:bg-petrolhover text-white text-xs font-semibold px-4 py-2.5 rounded-[6px] transition duration-150 inline-flex items-center gap-1.5 cursor-pointer">
+                           class="bg-primarytext hover:bg-brownhover text-white text-xs font-semibold px-4 py-2.5 rounded-[6px] transition duration-150 inline-flex items-center gap-1.5 cursor-pointer">
                             <span>احجز الآن</span>
                             <i data-lucide="arrow-left" class="w-3.5 h-3.5" aria-hidden="true"></i>
                         </a>
 
                         <div class="text-left">
-                            <span class="text-base font-bold text-petrol">{{ space.price_per_hour }}</span>
+                            <span class="text-base font-bold text-brown">{{ space.price_per_hour }}</span>
                             <span class="text-xs font-medium text-secondarytext">جنيه / ساعة</span>
                         </div>
                     </div>

@@ -21,9 +21,9 @@
                 </div>
                 <div class="p-6">
                     <div class="flex flex-wrap items-center gap-2 mb-3">
-                        <span class="bg-iconbg text-petrol text-xs font-semibold px-3 py-1 rounded-[5px]">{{ space.category.name }}</span>
+                        <span class="bg-iconbg text-brown text-xs font-semibold px-3 py-1 rounded-[5px]">{{ space.category.name }}</span>
                         <span class="bg-pagebg text-secondarytext border border-borderline text-xs px-3 py-1 rounded-[5px] inline-flex items-center gap-1">
-                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-petrol" aria-hidden="true"></i>
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brown" aria-hidden="true"></i>
                             <span>{{ space.floor_level }}</span>
                         </span>
                     </div>
@@ -42,7 +42,7 @@
                         </div>
                         <div>
                             <span class="text-xs text-secondarytext block mb-1">السعر</span>
-                            <span class="text-sm font-bold text-petrol">{{ space.price_per_hour }} جنيه / ساعة</span>
+                            <span class="text-sm font-bold text-brown">{{ space.price_per_hour }} جنيه / ساعة</span>
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                         {% for amenity in space.amenities.all %}
                             <div class="p-2.5 rounded-[6px] bg-pagebg border border-borderline text-xs font-medium flex items-center gap-2 text-primarytext">
-                                <i data-lucide="{{ amenity.icon_name }}" class="w-4 h-4 text-petrol shrink-0" aria-hidden="true"></i>
+                                <i data-lucide="{{ amenity.icon_name }}" class="w-4 h-4 text-brown shrink-0" aria-hidden="true"></i>
                                 <span>{{ amenity.name }}</span>
                             </div>
                         {% endfor %}
@@ -67,7 +67,7 @@
                         <h2 class="text-lg font-bold text-primarytext">حجز الوحدة</h2>
                         <p class="text-xs text-secondarytext mt-0.5">تحقق من التوفر في الوقت الحقيقي واحسب التكلفة</p>
                     </div>
-                    <div class="w-9 h-9 rounded-[6px] bg-iconbg text-petrol flex items-center justify-center">
+                    <div class="w-9 h-9 rounded-[6px] bg-iconbg text-brown flex items-center justify-center">
                         <i data-lucide="calendar-check" class="w-5 h-5" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -82,13 +82,13 @@
                     <div>
                         <label for="id_booking_date" class="block text-xs font-semibold text-primarytext mb-1.5">التاريخ</label>
                         <input id="id_booking_date" type="date" name="booking_date" value="{% now 'Y-m-d' %}" required
-                               class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm bg-cardbg focus:border-petrol outline-none">
+                               class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm bg-cardbg focus:border-brown outline-none">
                     </div>
 
                     <div class="grid grid-cols-2 gap-3">
                         <div>
                             <label for="id_start_hour" class="block text-xs font-semibold text-primarytext mb-1.5">من الساعة</label>
-                            <select id="id_start_hour" name="start_hour" class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm bg-cardbg focus:border-petrol outline-none">
+                            <select id="id_start_hour" name="start_hour" class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm bg-cardbg focus:border-brown outline-none">
                                 <option value="9">09:00 صباحاً</option>
                                 <option value="10">10:00 صباحاً</option>
                                 <option value="11">11:00 صباحاً</option>
@@ -102,7 +102,7 @@
                         </div>
                         <div>
                             <label for="id_end_hour" class="block text-xs font-semibold text-primarytext mb-1.5">إلى الساعة</label>
-                            <select id="id_end_hour" name="end_hour" class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm bg-cardbg focus:border-petrol outline-none">
+                            <select id="id_end_hour" name="end_hour" class="w-full border border-borderline rounded-[6px] px-3 py-2 text-sm bg-cardbg focus:border-brown outline-none">
                                 <option value="11">11:00 صباحاً</option>
                                 <option value="12">12:00 ظهراً</option>
                                 <option value="13">01:00 مساءً</option>
@@ -124,8 +124,8 @@
                             <label class="flex items-center justify-between p-2.5 border border-borderline rounded-[6px] text-xs cursor-pointer hover:bg-pagebg transition duration-150">
                                 <span class="font-medium text-primarytext">{{ addon.name }}</span>
                                 <div class="flex items-center gap-2">
-                                    <span class="text-petrol font-semibold">+{{ addon.price }} جنيه</span>
-                                    <input type="checkbox" name="addons" value="{{ addon.id }}" class="rounded border-borderline text-petrol focus:ring-0">
+                                    <span class="text-brown font-semibold">+{{ addon.price }} جنيه</span>
+                                    <input type="checkbox" name="addons" value="{{ addon.id }}" class="rounded border-borderline text-brown focus:ring-0">
                                 </div>
                             </label>
                             {% endfor %}
@@ -135,7 +135,7 @@
 
                     <div id="availability-result"></div>
 
-                    <button type="submit" class="w-full bg-primarytext hover:bg-petrolhover text-white font-semibold text-sm py-3 rounded-[6px] transition duration-150 flex items-center justify-center gap-2 cursor-pointer">
+                    <button type="submit" class="w-full bg-primarytext hover:bg-brownhover text-white font-semibold text-sm py-3 rounded-[6px] transition duration-150 flex items-center justify-center gap-2 cursor-pointer">
                         <span>تأكيد الحجز</span>
                         <i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i>
                     </button>

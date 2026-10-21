@@ -10,7 +10,7 @@
             <span>الوحدة محجوزة في هذا التوقيت. اختر فترة أخرى.</span>
         </div>
     {% else %}
-        <div class="font-bold flex items-center gap-1.5 text-petrol">
+        <div class="font-bold flex items-center gap-1.5 text-brown">
             <i data-lucide="check-circle-2" class="w-4 h-4" aria-hidden="true"></i>
             <span>متاحة للحجز ({{ hours_count }} ساعات)</span>
         </div>
@@ -28,7 +28,7 @@
             {% endif %}
             <div class="flex justify-between items-center pt-2 border-t border-borderline text-sm text-primarytext">
                 <span class="font-bold">الإجمالي:</span>
-                <strong class="text-base font-bold text-petrol">{{ total_cost }} جنيه</strong>
+                <strong class="text-base font-bold text-brown">{{ total_cost }} جنيه</strong>
             </div>
         </div>
     {% endif %}
