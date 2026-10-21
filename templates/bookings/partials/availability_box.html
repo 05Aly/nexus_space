@@ -1,0 +1,48 @@
+<div class="p-4 rounded-[6px] border text-xs space-y-2.5 {% if has_conflict or invalid_range %}bg-red-50 border-red-200 text-red-900{% else %}bg-pagebg border-borderline text-primarytext{% endif %}">
+    {% if invalid_range %}
+        <div class="font-bold flex items-center gap-1.5 text-red-800">
+            <i data-lucide="alert-circle" class="w-4 h-4" aria-hidden="true"></i>
+            <span>وقت النهاية يجب أن يكون بعد وقت البداية.</span>
+        </div>
+    {% elif has_conflict %}
+        <div class="font-bold flex items-center gap-1.5 text-red-800">
+            <i data-lucide="x-circle" class="w-4 h-4" aria-hidden="true"></i>
+            <span>الوحدة محجوزة في هذا التوقيت. اختر فترة أخرى.</span>
+        </div>
+    {% else %}
+        <div class="font-bold flex items-center gap-1.5 text-petrol">
+            <i data-lucide="check-circle-2" class="w-4 h-4" aria-hidden="true"></i>
+            <span>متاحة للحجز ({{ hours_count }} ساعات)</span>
+        </div>
+
+        <div class="pt-2 border-t border-borderline space-y-1 text-secondarytext">
+            <div class="flex justify-between">
+                <span>تكلفة الساعات:</span>
+                <span class="font-semibold text-primarytext">{{ base_cost }} جنيه</span>
+            </div>
+            {% if addons_cost > 0 %}
+            <div class="flex justify-between">
+                <span>الخدمات الإضافية:</span>
+                <span class="font-semibold text-primarytext">+{{ addons_cost }} جنيه</span>
+            </div>
+            {% endif %}
+            <div class="flex justify-between items-center pt-2 border-t border-borderline text-sm text-primarytext">
+                <span class="font-bold">الإجمالي:</span>
+                <strong class="text-base font-bold text-petrol">{{ total_cost }} جنيه</strong>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if bookings_on_date %}
+        <div class="pt-2 border-t border-borderline text-secondarytext">
+            <span class="font-semibold block mb-1">الفترات المحجوزة في هذا اليوم:</span>
+            <div class="flex flex-wrap gap-1.5">
+                {% for b in bookings_on_date %}
+                    <span class="bg-red-100 text-red-900 px-2 py-0.5 rounded-[4px] font-medium text-[11px]">
+                        {{ b.start_hour }}:00 إلى {{ b.end_hour }}:00
+                    </span>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</div>

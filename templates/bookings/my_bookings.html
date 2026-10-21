@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-wrap justify-between items-center gap-4 mb-6 pb-4 border-b border-borderline">
+        <div>
+            <h1 class="text-xl font-bold text-primarytext">حجوزاتي</h1>
+            <p class="text-xs text-secondarytext mt-0.5">متابعة وإدارة حجوزات الوحدات والقاعات</p>
+        </div>
+        <a href="{% url 'home' %}#spaces-section" class="bg-primarytext hover:bg-petrolhover text-white text-xs font-semibold px-4 py-2.5 rounded-[6px] transition duration-150 inline-flex items-center gap-1.5">
+            <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i>
+            <span>حجز وحدة جديدة</span>
+        </a>
+    </div>
+
+    <div class="bg-cardbg rounded-[8px] border border-borderline overflow-x-auto">
+        <table class="w-full text-right text-xs sm:text-sm">
+            <thead class="bg-pagebg text-secondarytext font-bold border-b border-borderline">
+                <tr>
+                    <th class="p-4">كود الحجز</th>
+                    <th class="p-4">الوحدة</th>
+                    <th class="p-4">التاريخ</th>
+                    <th class="p-4">التوقيت</th>
+                    <th class="p-4">الإجمالي</th>
+                    <th class="p-4">الحالة</th>
+                    <th class="p-4">إجراء</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-borderline">
+                {% for b in bookings %}
+                <tr class="hover:bg-pagebg/60">
+                    <td class="p-4 font-mono font-bold text-primarytext">{{ b.reference_code }}</td>
+                    <td class="p-4 font-semibold text-primarytext">{{ b.space.name }}</td>
+                    <td class="p-4 text-secondarytext">{{ b.booking_date }}</td>
+                    <td class="p-4 text-secondarytext">{{ b.start_hour }}:00 إلى {{ b.end_hour }}:00</td>
+                    <td class="p-4 font-bold text-petrol">{{ b.total_price }} جنيه</td>
+                    <td class="p-4">
+                        {% if b.status == 'CONFIRMED' %}
+                            <span class="bg-iconbg text-petrol px-2.5 py-1 rounded-[5px] text-xs font-semibold">مؤكد</span>
+                        {% elif b.status == 'CANCELLED' %}
+                            <span class="bg-gray-100 text-secondarytext px-2.5 py-1 rounded-[5px] text-xs font-semibold">ملغي</span>
+                        {% else %}
+                            <span class="bg-amber-50 text-amber-800 px-2.5 py-1 rounded-[5px] text-xs font-semibold">قيد المراجعة</span>
+                        {% endif %}
+                    </td>
+                    <td class="p-4">
+                        {% if b.status != 'CANCELLED' %}
+                            <a href="{% url 'cancel_booking' b.id %}" class="text-red-700 hover:underline font-semibold text-xs">إلغاء الحجز</a>
+                        {% else %}
+                            <span class="text-secondarytext text-xs">لا يوجد إجراء</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7" class="p-8 text-center text-secondarytext">لا توجد حجوزات مسجلة حالياً.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

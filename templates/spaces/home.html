@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- 1. Hero Section -->
+{% include 'partials/hero_section.html' %}
+
+<!-- 2. Platform Features (5 Equal Items) -->
+{% include 'partials/features_section.html' %}
+
+<!-- 3. Available Spaces Grid (3 Cards) -->
+{% include 'partials/spaces_section.html' %}
+
+<!-- 4. How It Works & Dark Panel Section -->
+{% include 'partials/booking_steps_section.html' %}
+
+<!-- 5. FAQ Section (Linked from Navbar) -->
+{% if faqs %}
+<section id="faq-section" class="py-12 bg-pagebg">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-primarytext">الأسئلة الشائعة</h2>
+            <p class="text-xs text-secondarytext mt-1">معلومات واضحة حول إجراءات الحجز وسياسات الاستخدام</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {% for faq in faqs %}
+            <div class="bg-cardbg p-5 rounded-[6px] border border-borderline">
+                <h3 class="text-sm font-bold text-primarytext mb-2 flex items-start gap-2">
+                    <i data-lucide="help-circle" class="w-4 h-4 text-petrol shrink-0 mt-0.5" aria-hidden="true"></i>
+                    <span>{{ faq.question }}</span>
+                </h3>
+                <p class="text-xs text-secondarytext leading-relaxed">{{ faq.answer }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}

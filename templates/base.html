@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site_config.site_name }} | مساحات عمل وقاعات</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pagebg: '#F7F6F2',
+                        cardbg: '#FFFFFF',
+                        primarytext: '#172D36',
+                        secondarytext: '#66747A',
+                        petrol: '#075E59',
+                        petrolhover: '#064B47',
+                        darkpanel: '#173A39',
+                        borderline: '#E3E5E1',
+                        iconbg: '#EAF0EC',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #F7F6F2;
+            color: #172D36;
+            overflow-x: hidden;
+        }
+        .brand-en {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-pagebg text-primarytext selection:bg-petrol selection:text-white">
+
+    <!-- Navbar Component -->
+    {% include 'partials/navbar.html' %}
+
+    <!-- Flash Notifications -->
+    {% if messages %}
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 mt-4 w-full">
+        {% for message in messages %}
+            <div class="p-3.5 rounded-[6px] border text-sm font-medium flex items-center justify-between {% if message.tags == 'error' %}bg-red-50 text-red-900 border-red-200{% else %}bg-iconbg text-primarytext border-borderline{% endif %}">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="info" class="w-4 h-4 text-petrol shrink-0" aria-hidden="true"></i>
+                    <span>{{ message }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer Component -->
+    {% include 'partials/footer.html' %}
+
+    <script>
+        lucide.createIcons();
+        document.body.addEventListener('htmx:afterSwap', function() {
+            lucide.createIcons();
+        });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-nav-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

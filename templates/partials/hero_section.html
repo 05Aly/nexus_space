@@ -1,0 +1,46 @@
+<section class="border-b border-borderline bg-[#F5F4F0] overflow-hidden">
+    <div class="max-w-[1320px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[330px] lg:min-h-[360px]">
+
+            <!-- Text Content Column (Left in visual desktop reference / second in RTL DOM or ordered via lg:order) -->
+            <div class="lg:col-span-5 lg:order-2 flex flex-col justify-center px-4 sm:px-8 lg:pr-10 lg:pl-6 py-10 lg:py-12 text-right z-10">
+                <span class="text-xs font-medium text-secondarytext mb-2 block">
+                    مساحات عمل، قاعات اجتماعات، ومكاتب مشتركة
+                </span>
+                <h1 class="text-[29px] sm:text-[36px] lg:text-[40px] font-bold text-primarytext leading-[1.28] mb-4">
+                    {{ site_config.hero_title_line1 }}<br>
+                    {{ site_config.hero_title_line2 }}
+                </h1>
+                <p class="text-secondarytext text-sm sm:text-[15px] leading-relaxed mb-7 max-w-xl">
+                    {{ site_config.hero_subtitle }}
+                </p>
+                <div class="flex flex-wrap items-center gap-3">
+                    <a href="#spaces-section" class="bg-primarytext hover:bg-petrolhover text-white font-semibold text-sm px-5 py-2.5 rounded-[6px] transition duration-150 inline-flex items-center gap-2 cursor-pointer">
+                        <span>استعرض الوحدات</span>
+                        <i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i>
+                    </a>
+                    <a href="#how-it-works" class="bg-cardbg hover:bg-iconbg text-primarytext border border-borderline font-medium text-sm px-5 py-2.5 rounded-[6px] transition duration-150 inline-flex items-center cursor-pointer">
+                        <span>كيف يعمل النظام؟</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Meeting Room Image Column (Right side in visual desktop reference) -->
+            <div class="lg:col-span-7 lg:order-1 relative min-h-[260px] sm:min-h-[320px] lg:min-h-[360px]">
+                <img src="{{ site_config.hero_image_url }}"
+                     alt="قاعة اجتماعات حديثة مجهزة بطاولة خشبية وكراسي وشاشة عرض"
+                     class="w-full h-full object-cover object-center block">
+                <!-- Soft subtle fade into the light background on the text side -->
+                <div class="hidden lg:block absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#F5F4F0] via-[#F5F4F0]/60 to-transparent pointer-events-none"></div>
+                <!-- Subtle caption labels on the far right edge as seen in reference -->
+                <div class="hidden sm:flex flex-col items-end justify-center absolute top-8 right-6 text-white/90 text-xs font-medium space-y-1.5 bg-black/25 backdrop-blur-[2px] px-3.5 py-2.5 rounded-[6px]">
+                    <span>مكاتب</span>
+                    <span>قاعات اجتماعات</span>
+                    <span>مساحات عمل مشتركة</span>
+                    <span class="w-8 h-[1px] bg-white/60 mt-1"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
